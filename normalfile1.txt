@@ -1,2 +1,52 @@
-why ur delect the files with our my permission 
-dont do this agian
+#!/bin/bash
+#Website setup
+#Declering the variables
+date
+URL = https://www.tooplate.com/zip-templates/2121_wave_cafe.zip
+FILE = 2121_wave_cafe
+srv = apache2
+SRV = httpd
+echo "start the program"
+echo 
+if [ 1 -eq 1 ]
+then
+apt update -y
+echo "installing the services and extractors"
+apt install apache2 wget unzip -y >> /dev/null
+systemctl start $srv
+systemctl enable $srv
+echo
+echo "creating a directory and downloading the zip file from the tooplate.com"
+mkdir -p /tmp/webfile1 >> /dev/null
+cd /tmp/webfile
+wget $URL >> /dev/null
+echo "Extracting the files"
+unzip -o $FILE.ZIP >> /dev/null
+echo "copying extracting file into html"
+cp -r $FILE/* /var/www/html >> /dev/null
+echo "restarting the service"
+systemctl restart $srv
+echo 
+rm -rf /tmp/webfile1
+
+else
+yum update -y
+echo "installing the services and extractors"
+yum install httpd  wget unzip -y >> /dev/null
+systemctl start $SRV
+systemctl enable $SRV
+echo
+echo "creating a directory and downloading the zip file from the tooplate.com"
+mkdir -p /tmp/webfile1 >> /dev/null
+cd /tmp/webfile
+wget $URL >> /dev/null
+echo "Extracting the files"
+unzip -o $FILE.ZIP >> /dev/null
+echo "copying extracting file into html"
+cp -r $FILE/* /var/www/html >> /dev/null
+echo "restarting the service"
+systemctl restart $SRV
+echo
+rm -rf /tmp/webfile1
+date
+fi
