@@ -28,7 +28,6 @@ echo "restarting the service"
 systemctl restart $srv
 echo 
 rm -rf /tmp/webfile1
-
 else
 yum update -y
 echo "installing the services and extractors"
