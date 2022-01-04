@@ -8,9 +8,9 @@ srv = apache2
 SRV = httpd
 echo "start the program"
 echo 
-if [ 1 -eq 1 ]
-then
 apt update -y
+if [ $? -eq 0 ]
+then
 echo "installing the services and extractors"
 apt install apache2 wget unzip -y >> /dev/null
 systemctl start $srv
