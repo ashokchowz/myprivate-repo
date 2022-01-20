@@ -1,5 +1,12 @@
+this is belongs to only for practice
+just do hard work in a simple manner
 hi i am new to learn the devops but it is intresting i more 
 hello!
 focus on the subject to get a job 
+<<<<<<< HEAD:emptyfile.txt
 onece agian exercise and more trouble shooting
 
+=======
+do smart work not hard work 
+practice man makes perfect 
+>>>>>>> studyhall:newwarfile.txt
