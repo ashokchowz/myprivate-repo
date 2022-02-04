@@ -47,6 +47,5 @@ echo "restarting the service"
 systemctl restart $SRV
 echo
 rm -rf /tmp/webfile1
-date
 fi
-date
+
