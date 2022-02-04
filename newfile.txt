@@ -49,3 +49,4 @@ echo
 rm -rf /tmp/webfile1
 date
 fi
+date
