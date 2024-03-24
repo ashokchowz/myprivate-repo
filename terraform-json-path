@@ -1,0 +1,20 @@
+If my terraform config files structure is looks like below 
+
+C:\Users\Usuario\Downloads\cor-billing-data-tf-module-1.1.1/
+                   aws/
+                            s3/
+                                  m_aws_s3_bucket.tf
+                                    variable.tf
+                                      output.tf
+                                 templates/
+                                                s3/
+                                                     s3_data.tf
+                                    accounts/
+                                                 s3data.tfvars.json
+
+i need to execute through modules concept so the files is reside in templates/s/s_data.tf we are calling like below 
+s3_data.tf file is 
+module "s3_bucket_creation" {
+  source  = "../../aws/s3"
+  s3Specs = jsondecode(file("${path.module}/../../accounts/s3_data.tfvars.json"))
+}
